@@ -6,11 +6,11 @@ def read_log_file(filename):
             for line in file:
                 print(line.strip())
     except FileNotFoundError:
-        print(f"Error: The file '{filename}' was not found.")
+        print(f"Error:'{filename}'파일 없음")
     except PermissionError:
-        print(f"Error: Permission denied when accessing '{filename}'.")
+        print(f"Error: '{filename}' 권한 없음")
     except Exception as e:
-        print(f"Unexpected error: {e}")
+        print(f"에러 발생: {e}")
 
 if __name__ == "__main__":
     log_file = "mission_computer_main.log"
