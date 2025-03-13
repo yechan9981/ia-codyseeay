@@ -1,5 +1,3 @@
-import os
-
 def read_log_file(filename):
     try:
         with open(filename, 'r', encoding='utf-8') as file:
