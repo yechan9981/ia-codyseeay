@@ -51,7 +51,7 @@ for item in dangerous_items:
 # 인화성 지수 0.7 이상인 항목을 CSV 형식으로 저장
 try:
     with open('2week/result/Mars_Base_Inventory_danger.csv', 'w') as file:
-        file.write('Substance,Quantity,Flammability\n')
+        file.write('Substance,수량,인화성\n')
         for item in dangerous_items:
             line = f"{item['Substance']},N/A,{item['Flammability']}\n"
             file.write(line)
