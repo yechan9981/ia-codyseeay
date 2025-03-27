@@ -1,0 +1,2 @@
+Internal Temp: 19.38°C, External Temp: 13.36°C, Humidity: 54.54%, Illuminance: 664.40 W/m2, CO2: 0.06%, Oxygen: 4.71%
+Internal Temp: 21.21°C, External Temp: 4.13°C, Humidity: 58.33%, Illuminance: 592.34 W/m2, CO2: 0.07%, Oxygen: 5.69%

@@ -5,6 +5,9 @@ try:
     with open('2week/Mars_Base_Inventory_List.csv', 'r') as file:
         lines = file.readlines()
         headers = lines[0].strip().split(',')
+        #제목1 제목2 제목3
+
+        #내용1 내용2 내용3   <- 해당 열 개수와 맞아야됨
         for line in lines[1:]:
             values = line.strip().split(',')
             if len(values) != len(headers):
@@ -19,12 +22,12 @@ except Exception as e:
     print('오류: 파일 읽기 중 문제가 발생했습니다 -', e)
     exit(1)
 
-# 원본 화물 목록 출력
+# 원본 출력
 print('원본 화물 목록:')
 for item in inventory_list:
     print(item)
 
-# 인화성이 높은 순으로 정렬
+# 인화성 높은 순으로 정렬
 try:
     sorted_inventory = sorted(
         inventory_list,
@@ -32,10 +35,10 @@ try:
         reverse=True
     )
 except KeyError:
-    print('오류: "Flammability" 키가 데이터에 존재하지 않습니다.')
+    print('오류: "Flammability" Key 데이터에 존재하지 않습니다.')
     exit(1)
 except ValueError:
-    print('오류: "Flammability" 값을 숫자로 변환할 수 없습니다.')
+    print('오류: "Flammability" Value 숫자로 변환할 수 없습니다.')
     exit(1)
 
 # 인화성 지수 0.7 이상인 항목 추출
