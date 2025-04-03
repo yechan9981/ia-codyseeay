@@ -24,12 +24,12 @@ class DummySensor:
     def get_env(self):
         # 로그 파일에 데이터 기록
         log = (
-            f'Internal Temp: {self.env_values["mars_base_internal_temperature"]:.2f}°C, '
-            f'External Temp: {self.env_values["mars_base_external_temperature"]:.2f}°C, '
-            f'Humidity: {self.env_values["mars_base_internal_humidity"]:.2f}%, '
-            f'Illuminance: {self.env_values["mars_base_external_illuminance"]:.2f} W/m2, '
-            f'CO2: {self.env_values["mars_base_internal_co2"]:.2f}%, '
-            f'Oxygen: {self.env_values["mars_base_internal_oxygen"]:.2f}%'
+            f'내부온도: {self.env_values["mars_base_internal_temperature"]:.2f}°C, \n'
+            f'외부온도: {self.env_values["mars_base_external_temperature"]:.2f}°C, \n'
+            f'  습도 : {self.env_values["mars_base_internal_humidity"]:.2f}%, \n'
+            f'  광량 : {self.env_values["mars_base_external_illuminance"]:.2f} W/m2, \n'
+            f'  CO2 : {self.env_values["mars_base_internal_co2"]:.2f}%, \n'
+            f'산소농도: {self.env_values["mars_base_internal_oxygen"]:.2f}%\n\n'
         )
         
         # 파일에 로그 추가
@@ -48,4 +48,4 @@ data = ds.get_env()
 # 결과 출력
 print('Mars Base Environmental Data:')
 for key, value in data.items():
-    print(f'{key}: {value:.2f}')
+    print(f'{key}: {value:f}')
