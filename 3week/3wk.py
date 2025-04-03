@@ -38,14 +38,21 @@ class DummySensor:
         
         return self.env_values
 
-# DummySensor 객체 생성
-ds = DummySensor()
+if __name__ == "__main__":
+    # DummySensor 객체 생성
+    ds = DummySensor()
 
-# 환경 데이터 설정하고 가져오기
-ds.set_env()
-data = ds.get_env()
+    # 환경 데이터 설정하고 가져오기
+    ds.set_env()
+    data = ds.get_env()
 
-# 결과 출력
-print('Mars Base Environmental Data:')
-for key, value in data.items():
-    print(f'{key}: {value:.2f}')
+    # 결과 출력
+    print('Mars Base Environmental Data:')
+    for key, value in data.items():
+        print(f'{key}: {value:.2f}')
+
+
+
+
+
+        
