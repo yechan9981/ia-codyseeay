@@ -48,4 +48,4 @@ data = ds.get_env()
 # 결과 출력
 print('Mars Base Environmental Data:')
 for key, value in data.items():
-    print(f'{key}: {value:f}')
+    print(f'{key}: {value:.2f}')
