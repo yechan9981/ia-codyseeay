@@ -93,6 +93,7 @@ class MissionComputer:
         """시스템 중지"""
         self.running = False
         print('System stopped.')
+        
 
 
 if __name__ == "__main__":
