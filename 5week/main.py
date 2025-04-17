@@ -29,16 +29,16 @@ class DummySensor:
     # 환경 데이터를 반환하고 로그 파일에 기록
     def get_env(self):
         log = (
-            f'내부온도: {self.env_values["mars_base_internal_temperature"]:.2f}°C, \n'
-            f'외부온도: {self.env_values["mars_base_external_temperature"]:.2f}°C, \n'
-            f'  습도 : {self.env_values["mars_base_internal_humidity"]:.2f}%, \n'
-            f'  광량 : {self.env_values["mars_base_external_illuminance"]:.2f} W/m2, \n'
-            f'  CO2 : {self.env_values["mars_base_internal_co2"]:.2f}%, \n'
-            f'산소농도: {self.env_values["mars_base_internal_oxygen"]:.2f}%\n\n'
+            f'내부온도: {self.env_values["mars_base_internal_temperature"]:.2f}°C, '
+            f'외부온도: {self.env_values["mars_base_external_temperature"]:.2f}°C, '
+            f'습도: {self.env_values["mars_base_internal_humidity"]:.2f}%, '
+            f'광량: {self.env_values["mars_base_external_illuminance"]:.2f} W/m2, '
+            f'CO2: {self.env_values["mars_base_internal_co2"]:.2f}%, '
+            f'산소농도: {self.env_values["mars_base_internal_oxygen"]:.2f}%\n'
         )
         # 로그 파일에 기록
         with open('mars_mission_log.txt', 'a') as file:
-            file.write(log + '\n')
+            file.write(log)
         return self.env_values
 
 
