@@ -70,12 +70,18 @@ class Calculator(QWidget):
         elif text == '=':  # '=' 버튼: 계산 수행
             try:
                 # 입력된 수식을 계산 (×와 ÷를 *, /로 변환)
-                result = eval(self.display.text().replace('×', '*').replace('÷', '/'))
-                self.display.setText(str(result))  # 결과를 출력창에 표시
+                result = eval(self.display.text().replace(',', '').replace('×', '*').replace('÷', '/'))
+                self.display.setText(f"{result:,}")  # 결과를 쉼표 형식으로 표시
             except Exception:  # 계산 중 오류 발생 시
                 self.display.setText('오류임')  # 'Error' 메시지 표시
         else:  # 나머지 버튼: 출력창에 텍스트 추가
-            self.display.setText(self.display.text() + text)
+            current_text = self.display.text().replace(',', '')  # 기존 텍스트에서 쉼표 제거
+            updated_text = current_text + text  # 새로 입력된 텍스트 추가
+            if updated_text.isdigit():  # 숫자인 경우에만 쉼표 추가
+                formatted_text = f"{int(updated_text):,}"  # 3자리마다 쉼표 추가
+                self.display.setText(formatted_text)
+            else:
+                self.display.setText(updated_text)  # 숫자가 아닌 경우 그대로 표시
 
 
 if __name__ == '__main__':
