@@ -54,7 +54,7 @@ def load_password_file():
 def save_result(shift_number, decoded_text):
     """해독 결과를 result.txt에 저장하는 함수"""
     try:
-        with open('9week/result.txt', 'w', encoding='utf-8') as file:
+        with open('result.txt', 'w', encoding='utf-8') as file:
             file.write(f'시프트 번호: {shift_number}\n')
             file.write(f'해독된 텍스트: {decoded_text}\n')
         print(f'결과가 result.txt에 저장되었습니다.')
